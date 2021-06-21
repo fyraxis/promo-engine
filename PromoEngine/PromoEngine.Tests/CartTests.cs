@@ -95,5 +95,16 @@ namespace PromoEngine.Tests
 
             Assert.Equal(cart.TotalCartValuePostPromoProcess, cart.TotalCartValue);
         }
+
+        [Fact]
+        public void ShouldHaveRegisteredAppliablePromotionsAfterSimpleCall()
+        {
+            int expected = 1;
+
+            IShoppingCart cart = Factory.CreateShoppingCart();
+            cart.RegisterAppliedPromotion(Factory.CreateSinglePackFixPricePromoRule());
+
+            Assert.Equal(expected, cart.PromotionsApplied.Count());
+        }
     }
 }

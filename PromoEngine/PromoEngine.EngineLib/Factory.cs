@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PromoEngine.EngineLib.Product;
+using PromoEngine.EngineLib.PromoRules;
 
 namespace PromoEngine.EngineLib
 {
@@ -16,6 +17,8 @@ namespace PromoEngine.EngineLib
         public static IShoppingCart CreateShoppingCart() => new ShoppingCart();
 
         public static IShoppingItem CreateShoppingItem() => new ShoppingItem();
+
+        public static IPromotion CreateSinglePackFixPricePromoRule() => new PromoSinglePackFixPrice();
 
     }
 }

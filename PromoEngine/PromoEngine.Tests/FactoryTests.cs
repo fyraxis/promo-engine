@@ -2,6 +2,7 @@
 using PromoEngine.EngineLib.Cart;
 using PromoEngine.EngineLib.Engine;
 using PromoEngine.EngineLib.Product;
+using PromoEngine.EngineLib.PromoRules;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,7 @@ namespace PromoEngine.Tests
             Assert.NotNull(engine);
         }
 
+        [Fact]
         public void ShouldCreateNewShoppingItem()
         {
             IShoppingItem shopItem;
@@ -40,6 +42,16 @@ namespace PromoEngine.Tests
             shopItem = Factory.CreateShoppingItem();
 
             Assert.NotNull(shopItem);
+        }
+
+        [Fact]
+        public void ShouldCreateNewFixPriceSinglePackPromoRule()
+        {
+            IPromotion promoRule;
+
+            promoRule = Factory.CreateSinglePackFixPricePromoRule();
+
+            Assert.NotNull(promoRule);
         }
     }
 }
