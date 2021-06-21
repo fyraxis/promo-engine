@@ -10,9 +10,9 @@ namespace PromoEngine.EngineLib.Cart
 {
     public class ShoppingCart : IShoppingCart
     {
-        public decimal TotalCartValue => Items.Sum(i => i.Price);
+        public decimal TotalCartValue => Items.Sum(i => i.Price * i.Quantity);
 
-        public decimal TotalCartValuePostPromoProcess => Items.Sum(i => i.Price);
+        public decimal TotalCartValuePostPromoProcess => TotalCartValue + PromotionsApplied.Sum(p => p.GetTotalPromoAmount());
 
         public IEnumerable<IShoppingItem> Items { get; private set; }
 

@@ -72,9 +72,9 @@ namespace PromoEngine.Tests
         {
             decimal expected = 15.35m;
             List<IShoppingItem> items = new List<IShoppingItem>() {
-                new ShoppingItem() { Price = 10M },
-                new ShoppingItem() { Price = 5M },
-                new ShoppingItem() { Price = .35M } };
+                new ShoppingItem() { Quantity = 1, Price = 10M },
+                new ShoppingItem() { Quantity = 1, Price = 5M },
+                new ShoppingItem() { Quantity = 1, Price = .35M } };
 
             IShoppingCart cart = Factory.CreateShoppingCart();
             cart.LoadShoppingItems(items);
