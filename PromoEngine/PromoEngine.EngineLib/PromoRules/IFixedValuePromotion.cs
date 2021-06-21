@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PromoEngine.EngineLib.PromoRules
 {
-    interface IFixedValuePromotion : IPromotion
+    public interface IFixedValuePromotion : IPromotion
     {
         public decimal FixedPromoValue { get; set; }
     }

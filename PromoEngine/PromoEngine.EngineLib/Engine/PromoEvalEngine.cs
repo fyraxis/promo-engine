@@ -26,8 +26,10 @@ namespace PromoEngine.EngineLib.Engine
 
         public void ProcessShoppingCart()
         {
-            foreach (var promo in Rules)
+            foreach (var promo in Rules.OrderBy(p => p.Priority))
             {
+                if (promo.CheckRuleValid() == false)
+                    continue;
                 promo.ApplyToCart(Cart);
             }
         }

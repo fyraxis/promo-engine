@@ -31,7 +31,7 @@ namespace PromoEngine.EngineLib.Cart
 
         public void RegisterAppliedPromotion(IPromotion promo)
         {
-            PromotionsApplied.Append(promo);
+            PromotionsApplied = PromotionsApplied.Append(promo);
         }
     }
 }
