@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PromoEngine.EngineLib
+namespace PromoEngine.EngineLib.Cart
 {
-    public class ShoppingCart
+    public class ShoppingCart : IShoppingCart
     {
     }
 }

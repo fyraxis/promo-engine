@@ -1,5 +1,9 @@
 ﻿using PromoEngine.EngineLib;
+using PromoEngine.EngineLib.Cart;
+using PromoEngine.EngineLib.Engine;
+using PromoEngine.EngineLib.PromoRules;
 using System;
+using System.Collections.Generic;
 
 namespace PromoEngine.UI
 {
@@ -7,26 +11,35 @@ namespace PromoEngine.UI
     {
         static void Main(string[] args)
         {
-            ShoppingCart cart;
-            PromoEvalEngine engine;
+            IShoppingCart cart;
+            IPromoEvalEngine engine;
+            List<IPromotion> rules;
             LoadShoppingCartData(out cart);
-            InitPromoEngine(out engine);
-            ProcessCartContents(engine, cart);
+            LoadPromoRules(out rules);
+            InitPromoEngine(out engine, cart, rules);
+            ProcessCartContents(engine);
         }
 
-        private static void LoadShoppingCartData(out ShoppingCart cart)
+        private static void LoadShoppingCartData(out IShoppingCart cart)
         {
-            cart = new ShoppingCart();
+            cart = Factory.CreateShoppingCart();
         }
 
-        private static void InitPromoEngine(out PromoEvalEngine engine)
+        private static void LoadPromoRules(out List<IPromotion> rules)
         {
-            engine = new PromoEvalEngine();
+            rules = new List<IPromotion>();
         }
 
-        private static void ProcessCartContents(PromoEvalEngine engine, ShoppingCart cart)
+        private static void InitPromoEngine(out IPromoEvalEngine engine, IShoppingCart cart, List<IPromotion> rules)
         {
-            
+            engine = Factory.CreatePromoEvalEngine();
+            engine.LoadPromoRules(rules);
+            engine.LoadShoppingCart(cart);
+        }
+
+        private static void ProcessCartContents(IPromoEvalEngine engine)
+        {
+            engine.ProcessShoppingCart();
         }
     }
 }
