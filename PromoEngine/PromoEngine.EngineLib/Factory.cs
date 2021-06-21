@@ -18,7 +18,11 @@ namespace PromoEngine.EngineLib
 
         public static IShoppingItem CreateShoppingItem() => new ShoppingItem();
 
-        public static IFixedValuePromotion CreateSinglePackFixPricePromoRule() => new PromoSinglePackFixPrice();
+        public static IPromoItem CreatePromoItem() => new PromoItem();
+
+        public static IFixedValuePromotionSinglePack CreateSinglePackFixPricePromoRule() => new PromoSinglePackFixPrice();
+
+        public static IFixedValuePromotionMultiPack CreateMultiPackFixPricePromoRule() => new PromoMultiPackFixPrice();
 
     }
 }
