@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PromoEngine.UI", "PromoEngi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PromoEngine.EngineLib", "PromoEngine.EngineLib\PromoEngine.EngineLib.csproj", "{704D2AF0-417D-4907-A51C-C7149EBE8724}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PromoEngine.Tests", "PromoEngine.Tests\PromoEngine.Tests.csproj", "{1344B8F6-BA08-46A5-AD6A-3AC1819474AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{704D2AF0-417D-4907-A51C-C7149EBE8724}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{704D2AF0-417D-4907-A51C-C7149EBE8724}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{704D2AF0-417D-4907-A51C-C7149EBE8724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1344B8F6-BA08-46A5-AD6A-3AC1819474AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1344B8F6-BA08-46A5-AD6A-3AC1819474AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1344B8F6-BA08-46A5-AD6A-3AC1819474AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1344B8F6-BA08-46A5-AD6A-3AC1819474AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
