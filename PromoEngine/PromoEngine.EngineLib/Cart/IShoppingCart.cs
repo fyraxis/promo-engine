@@ -19,5 +19,7 @@ namespace PromoEngine.EngineLib.Cart
         public IEnumerable<IPromotion> PromotionsApplied { get; }
 
         public void LoadShoppingItems(IEnumerable<IShoppingItem> cartItems);
+
+        public void RegisterAppliedPromotion(IPromotion promo);
     }
 }

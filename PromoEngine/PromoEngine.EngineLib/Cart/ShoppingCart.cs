@@ -28,5 +28,10 @@ namespace PromoEngine.EngineLib.Cart
         {
             Items = cartItems;
         }
+
+        public void RegisterAppliedPromotion(IPromotion promo)
+        {
+            PromotionsApplied.Append(promo);
+        }
     }
 }
