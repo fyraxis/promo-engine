@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PromoEngine.EngineLib.PromoRules
 {
-    public class PromoMultiPackFixPrice : IFixedValuePromotion
+    public class PromoMultiPackFixPrice : IFixedValuePromotionMultiPack
     {
         public decimal FixedPromoValue { get; set; }
         public int Priority { get; set; }

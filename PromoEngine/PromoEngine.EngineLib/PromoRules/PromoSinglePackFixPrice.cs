@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PromoEngine.EngineLib.PromoRules
 {
-    public class PromoSinglePackFixPrice : IFixedValuePromotion
+    public class PromoSinglePackFixPrice : IFixedValuePromotionSinglePack
     {
         public int Priority { get; set; }
         public bool IsApplied { get; private set; }
