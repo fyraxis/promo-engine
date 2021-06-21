@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PromoEngine.EngineLib.Product;
 
 namespace PromoEngine.EngineLib
 {
@@ -13,6 +14,8 @@ namespace PromoEngine.EngineLib
         public static IPromoEvalEngine CreatePromoEvalEngine() => new PromoEvalEngine();
 
         public static IShoppingCart CreateShoppingCart() => new ShoppingCart();
+
+        public static IShoppingItem CreateShoppingItem() => new ShoppingItem();
 
     }
 }
