@@ -12,7 +12,10 @@ namespace PromoEngine.EngineLib.Cart
     {
         public decimal TotalCartValue => Items.Sum(i => i.Price);
 
+        public decimal TotalCartValuePostPromoProcess => Items.Sum(i => i.Price);
+
         public IEnumerable<IShoppingItem> Items { get; private set; }
+
         public IEnumerable<IPromotion> PromotionsApplied { get; private set; }
 
         public ShoppingCart()
@@ -20,6 +23,7 @@ namespace PromoEngine.EngineLib.Cart
             Items = new List<IShoppingItem>();
             PromotionsApplied = new List<IPromotion>();
         }
+
         public void LoadShoppingItems(IEnumerable<IShoppingItem> cartItems)
         {
             Items = cartItems;

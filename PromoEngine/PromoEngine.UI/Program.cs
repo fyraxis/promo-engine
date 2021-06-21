@@ -1,6 +1,7 @@
 ﻿using PromoEngine.EngineLib;
 using PromoEngine.EngineLib.Cart;
 using PromoEngine.EngineLib.Engine;
+using PromoEngine.EngineLib.Product;
 using PromoEngine.EngineLib.PromoRules;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,8 @@ namespace PromoEngine.UI
         private static void LoadShoppingCartData(out IShoppingCart cart)
         {
             cart = Factory.CreateShoppingCart();
+            IEnumerable<IShoppingItem> items = new List<IShoppingItem>();
+            cart.LoadShoppingItems(items);
         }
 
         private static void LoadPromoRules(out List<IPromotion> rules)

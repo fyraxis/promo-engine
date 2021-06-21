@@ -11,6 +11,9 @@ namespace PromoEngine.EngineLib.Cart
     public interface IShoppingCart
     {
         public decimal TotalCartValue { get; }
+
+        public decimal TotalCartValuePostPromoProcess { get; }
+
         public IEnumerable<IShoppingItem> Items { get; }
 
         public IEnumerable<IPromotion> PromotionsApplied { get; }

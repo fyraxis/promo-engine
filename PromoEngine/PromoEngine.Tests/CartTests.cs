@@ -13,13 +13,22 @@ namespace PromoEngine.Tests
     public class CartTests
     {
         [Fact]
-        public void ShouldHaveTotalZeroValueForNewCart()
+        public void ShouldHaveZeroTotalCartValueForNewCart()
         {
             decimal expected = 0m;
 
             IShoppingCart cart = Factory.CreateShoppingCart();
 
             Assert.Equal(expected, cart.TotalCartValue);
+        }
+        [Fact]
+        public void ShouldHaveZeroTotalCartValuePostPromoProcessForNewCart()
+        {
+            decimal expected = 0m;
+
+            IShoppingCart cart = Factory.CreateShoppingCart();
+
+            Assert.Equal(expected, cart.TotalCartValuePostPromoProcess);
         }
 
         [Fact]
@@ -71,6 +80,20 @@ namespace PromoEngine.Tests
             cart.LoadShoppingItems(items);
 
             Assert.Equal(expected, cart.TotalCartValue);
+        }
+
+        [Fact]
+        public void ShouldHaveTotalValuesEqualWhenNoPromotionsApplied()
+        {
+            List<IShoppingItem> items = new List<IShoppingItem>() {
+                new ShoppingItem() { Price = 10M },
+                new ShoppingItem() { Price = 5M },
+                new ShoppingItem() { Price = .35M } };
+
+            IShoppingCart cart = Factory.CreateShoppingCart();
+            cart.LoadShoppingItems(items);
+
+            Assert.Equal(cart.TotalCartValuePostPromoProcess, cart.TotalCartValue);
         }
     }
 }
