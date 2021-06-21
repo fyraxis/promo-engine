@@ -10,5 +10,11 @@ namespace PromoEngine.EngineLib.Product
     {
         public string Code { get; set; }
         public int Quantity { get; set; }
+
+        public void LoadItemData(string code, int quantity)
+        {
+            Code = code;
+            Quantity = quantity;
+        }
     }
 }

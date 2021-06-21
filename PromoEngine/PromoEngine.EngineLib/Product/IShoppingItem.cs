@@ -11,5 +11,7 @@ namespace PromoEngine.EngineLib.Product
         public string Code { get; set; }
         public int Quantity { get; set; }
         public decimal Price { get; set; }
+
+        public void LoadItemData(string code, decimal price, int quantity);
     }
 }
